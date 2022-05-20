@@ -18,12 +18,11 @@ class ImagaeClassification:
         #make the prediction
         prediction = self.model.predict(my_image)
 
-        return self.convertToString(prediction)
+        return self.convertToString(prediction[0][0])
 
     def convertToString(self, modelOutput):
-        pred_class = modelOutput.argmax(axis=-1) 
 
-        if pred_class == 0:
+        if modelOutput == 0:
             return "COVID"
         else:
             return "NORMAL"
