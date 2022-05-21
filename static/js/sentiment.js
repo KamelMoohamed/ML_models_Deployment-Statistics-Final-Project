@@ -8,14 +8,6 @@ $(document).ready(function () {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
-      reader.onload = function (e) {
-        $("#imagePreview").css(
-          "background-image",
-          "url(" + e.target.result + ")"
-        );
-        $("#imagePreview").hide();
-        $("#imagePreview").fadeIn(650);
-      };
       reader.readAsDataURL(input.files[0]);
     }
   }
@@ -30,7 +22,7 @@ $(document).ready(function () {
   // Predict
   $("#ClassifierPredict").click(function () {
     var form_data = new FormData($("#upload-file")[0]);
-
+    $(".loader").show();
     // Make prediction by calling api /predict
     $.ajax({
       type: "POST",
@@ -43,7 +35,7 @@ $(document).ready(function () {
       success: function (data) {
         // Get and display the result
         $("#result").fadeIn(600);
-        $("#SenResults").text(" Result:  " + data);
+        $("#SenResults").text(data);
         console.log("Success!");
       },
     });

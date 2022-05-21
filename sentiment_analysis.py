@@ -1,6 +1,7 @@
 import re
 import pickle
 import numpy as np
+from langdetect import detect
 from keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -36,12 +37,17 @@ class SentimentAnalysis:
         return tweet
 
     def predict(self, tweet):
+        print(detect(tweet))
+        
+        if(detect(tweet) == 'ar' or detect(tweet) == 'fa'):
+            return "The Language your entered isn't Supported" 
         tweet = tweet.lower()
         tweet = re.sub('[^a-zA-z0-9\s]','',tweet)
         tweet = self.remove_hashtags(tweet)
         tweet = self.remove_users(tweet)
         tweet = self.remove_av(tweet)
 
+           
         tweet = self.tokenizer.texts_to_sequences(tweet)
         tweet = pad_sequences(tweet)
 
@@ -63,7 +69,7 @@ class SentimentAnalysis:
         else:
             out = "Neutral"
 
-        return out
+        return "Result: " + out
         
         
 

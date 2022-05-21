@@ -23,6 +23,6 @@ class ImagaeClassification:
     def convertToString(self, modelOutput):
 
         if modelOutput == 0:
-            return "COVID"
+            return "Result: COVID"
         else:
-            return "NORMAL"
+            return "Result: NORMAL"

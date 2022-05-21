@@ -690,3 +690,39 @@ label:hover {
     animation-timing-function: ease-out;
   }
 }
+.upload-label {
+  font-family: georgia;
+  color: #12186a !important;
+  font-size: 25px;
+  text-shadow: 4px 1px 0px #7cacde;
+  box-shadow: 3px 1px 2px #bee2f9;
+  padding: 10px 25px;
+  border-radius: 34px;
+  border: 2px solid #3866a3;
+  background: #63b8ee;
+  background: linear-gradient(to top, #63b8ee, #468ccf);
+}
+.upload-label:hover {
+  color: #14396a !important;
+  background: #468ccf;
+  background: linear-gradient(to top, #468ccf, #63b8ee);
+}
+.img-preview {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.button1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.result {
+  /* background: #fff; */
+  width: 30rem;
+  margin: 5rem 1rem;
+  padding: 1.5rem;
+  position: relative;
+}

@@ -8,6 +8,16 @@ $(document).ready(function () {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#imagePreview").css(
+          "background-image",
+          "url(" + e.target.result + ")"
+        );
+        $("#imagePreview").hide();
+        $("#imagePreview").fadeIn(650);
+      };
+
       reader.readAsDataURL(input.files[0]);
     }
   }
@@ -15,7 +25,7 @@ $(document).ready(function () {
     // $(".image-section").show();
     $("#ImageButton").show();
     $("#imageResults").text("");
-    // $("#imageResults").hide();
+    $("#imageResults").hide();
     readURL(this);
   });
 
@@ -38,7 +48,7 @@ $(document).ready(function () {
         $(".loader").hide();
         $("#imageResults").fadeIn(600);
         $("#imageResults").show();
-        $("#imageResults").text(" Result:  " + data);
+        $("#imageResults").text(data);
       },
     });
   });

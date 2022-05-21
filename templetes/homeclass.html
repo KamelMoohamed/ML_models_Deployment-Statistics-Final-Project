@@ -160,8 +160,8 @@
               <textarea
                 name="text"
                 id="text"
-                cols="30"
-                rows="10"
+                cols="15"
+                rows="8"
                 placeholder="enter your text"
               ></textarea>
               <button
@@ -173,7 +173,8 @@
               </button>
             </form>
           </div>
-          <h1 class="heading" id="SenResults"><span>'</span><span>'</span></h1>
+          <div class="loader" style="display: none"></div>
+          <h1 class="heading" id="SenResults"><span></span><span></span></h1>
         </div>
       </div>
     </section>
@@ -185,7 +186,9 @@
 
           <div class="col-md-10" data-aos="flip-down">
             <form id="upload-image" method="post" enctype="multipart/form-data">
-              <label for="imageUpload" class="upload-label"> Choose... </label>
+              <label for="imageUpload" class="upload-label">
+                Upload image
+              </label>
               <input
                 type="file"
                 name="file"
@@ -204,9 +207,8 @@
               </div>
             </div>
           </div>
-          <h1 class="heading" id="imageResults">
-            <span>'</span><span>'</span>
-          </h1>
+          <div class="loader" style="display: none"></div>
+          <h1 class="heading" id="imageResults"><span></span><span></span></h1>
         </div>
       </div>
     </section>
